@@ -13,16 +13,16 @@ const GoogleAuth = () => {
                 .then(res => res.json())
                 .then(data => {
                     localStorage.setItem("user", data)
-                navigate("/kwizical")
+                    navigate("/kwizical")
                 });
         },
         onError: (error) => console.log('Login Failed:', error)
     });
 
     return (
-    <div>
-        <button className='login-with-google-btn' onClick={login}>Sign in with Google to play</button>
-    </div>)
+        <div>
+            <button className='login-with-google-btn rounded-lg' onClick={login}>Sign in with Google</button>
+        </div>)
 }
 
 export default GoogleAuth

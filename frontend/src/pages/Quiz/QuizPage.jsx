@@ -43,7 +43,8 @@ export const QuizPage = () => {
   return (
     <>
       {selectedGenre === 0 ? (
-        <div className="min-h-screen custom-background bg-cover">
+        // <div className="min-h-screen bg-homepage-background-2 bg-full">
+        <div className="relative w-full h-screen bg-full bg-center overflow-hidden animate-bg-transition-continuous">
           <GenrePicker onGenreSelect={handleGenrePicker}></GenrePicker>
         </div>
       ) : (
