@@ -2,28 +2,29 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    screens: {
-      xs: "350px",
-      sm: "640px",
-      md: "768px",
-    },
+    // screens: {
+    //   xs: "350px",
+    //   sm: "640px",
+    //   md: "768px",
+    // },
 
     extend: {
       backgroundColor: {
-        "box-color": "#F8F8F6", // Define the custom box color - currently cream
-        "hover-color": "#2B2939", // currently navy
+        "box-color": "#C9ACDB", // Define the custom box color - currently light-purple
+        "hover-color": "#0E243C", // currently navy
         "correct-color": "#38a169", //equivalent to green-500
         "incorrect-color": "#e53e3e", //equivalent to red-500
         "dark-purple": "#9058C4",
-        "light-purple": "#DD94D2",
+        "light-purple": "#C9ACDB",
         yellow: "#FBF44A",
         turquoise: "#7CD8E0",
         "hot-pink": "#F94E80",
+        navy: "#0E243C",
       },
       textColor: {
         "title-color": "#2B2939", // currently navy
-        "text-color": "#2B2939", // currently navy
-        "hover-text-color": "#F8F8F6", // currently cream
+        "text-color": "#0E243C", // box text color: currently navy
+        "hover-text-color": "#C9ACDB", // currently light-purple
         "question-text-color": "#F8F8F6", // currently cream
         "dark-purple": "#9058C4",
         "light-purple": "#DD94D2",
@@ -33,6 +34,8 @@ export default {
       },
       borderColor: {
         "hot-pink": "#F94E80",
+        "navy-border": "#0E243C",
+        "light-purple": "#DD94D2",
       },
       backgroundImage: {
         "homepage-background-0": 'url("../src/assets/rainbow-vortex.png")',
@@ -51,6 +54,10 @@ export default {
       fontFamily: {
         "font-metal": ["Jacquard", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
+        "hip-hop": ["Sedgwick Ave Display", "cursive"],
+      },
+      fontWeight: {
+        "weight-400": "400",
       },
       backgroundSize: {
         full: "100% 100%",

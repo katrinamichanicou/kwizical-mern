@@ -10,13 +10,15 @@ export const HomePage = () => {
     <div className="min-h-screen bg-full bg-cover bg-homepage-background-2 font-montserrat overflow-hidden">
       <div className="flex flex-col md:flex-row md:items-start">
         <div className="w-full md:w-1/2 lg:pr-8">
-          <div className="md:p-8 md:pl-16 rounded-lg sm:text-left xs:px-4">
-            <img
-              src={logo}
-              alt="Kwizical-logo"
-              className="w-80 h-80"
-            />
-            <div className="sm:text-8xl font-semibold text-white py-8 xs:text-4xl">{"LET'S GET KWIZICAL!"}</div>
+          <div className="md:p-8 md:pl-16 rounded-lg sm:text-left px-4">
+            <div className="flex justify-center sm:justify-start">
+              <img
+                src={logo}
+                alt="Kwizical-logo"
+                className="w-60 h-60 mt-4"
+              />
+            </div>
+            <div className="sm:text-8xl font-semibold text-white py-8 text-4xl">{"LET'S GET KWIZICAL!"}</div>
             <div className="text-xl text-white mb-8">
               A fun and challenging quiz game to test your music knowledge!
             </div>
@@ -33,17 +35,17 @@ export const HomePage = () => {
             <li>SELECT A GENRE OF MUSIC</li>
             <li>LISTEN TO THE SONG</li>
             <li>SELECT THE ANSWER</li>
-            <li>Earn points for correct answers</li>
-            <li>Earn bonus points for a perfect score</li>
-            <li>And answer quickly for more points!</li>
+            <li>EARN POINTS FOR CORRECT ANSWERS</li>
+            <li>EARN BONUS POINTS FOR A PERFECT SCORE</li>
+            <li>ANSWER QUICKLY FOR EVEN MORE POINTS!</li>
             {/* <li>Compete with other players on the leaderboard</li> */}
           </ol>
 
-          <div className="p-2 "><GoogleAuth /></div>
-          <div className="p-2">
+          <div className="p-2"><GoogleAuth /></div>
+          <div className="p-2 py-4 mb-4">
             <Link
               to="/kwizical"
-              className="bg-hot-pink text-white px-10 py-3 rounded-lg hover:bg-white hover:text-hot-pink hover:border-hot-pink hover:border-2"
+              className="bg-hot-pink text-white px-10 py-3.5 rounded-lg hover:bg-white hover:text-hot-pink hover:border-hot-pink hover:border-2 shadow-md shadow-indigo-950 hover:shadow-none transition-shadow duration-300"
             >
               Play as guest
             </Link>
