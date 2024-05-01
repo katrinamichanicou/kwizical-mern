@@ -62,33 +62,33 @@ export default {
       backgroundSize: {
         full: "100% 100%",
       },
-      keyframes: {
-        "sound-wave": {
-          "0%": { transform: "scale(0)", opacity: 1 },
-          "100%": { transform: "scale(2)", opacity: 0 },
-        },
-        "bg-transition-continuous": {
-          "0%, 100%": {
-            backgroundImage: 'url("../src/assets/rainbow-vortex-2.png")',
-          },
-          "50%": {
-            backgroundImage: 'url("../src/assets/rainbow-vortex-1.png")',
-          },
-        },
-        "bg-transition-pop": {
-          "0%, 100%": {
-            backgroundImage: 'url("../src/assets/rainbow-vortex-1.png")',
-          },
-          "50%": {
-            backgroundImage: 'url("../src/assets/rainbow-vortex-0.png")',
-          },
-        },
-      },
-    },
-    animation: {
-      "sound-wave": "sound-wave 2s ease-out forwards",
-      "bg-transition-continuous": "bg-transition-continuous 5s infinite",
-      "bg-transition-pop": "bg-transition-pop 2s ease-in-out forwards",
+      //   keyframes: {
+      //     "sound-wave": {
+      //       "0%": { transform: "scale(0)", opacity: 1 },
+      //       "100%": { transform: "scale(2)", opacity: 0 },
+      //     },
+      //     "bg-transition-continuous": {
+      //       "0%, 100%": {
+      //         backgroundImage: 'url("../src/assets/rainbow-vortex-2.png")',
+      //       },
+      //       "50%": {
+      //         backgroundImage: 'url("../src/assets/rainbow-vortex-1.png")',
+      //       },
+      //     },
+      //     "bg-transition-pop": {
+      //       "0%, 100%": {
+      //         backgroundImage: 'url("../src/assets/rainbow-vortex-1.png")',
+      //       },
+      //       "50%": {
+      //         backgroundImage: 'url("../src/assets/rainbow-vortex-0.png")',
+      //       },
+      //     },
+      //   },
+      // },
+      // animation: {
+      //   "sound-wave": "sound-wave 2s ease-out forwards",
+      //   "bg-transition-continuous": "bg-transition-continuous 5s infinite",
+      //   "bg-transition-pop": "bg-transition-pop 2s ease-in-out forwards",
     },
     plugins: [
       // The following plugins provides the sliding transition animation between "components" on the QuizPage
