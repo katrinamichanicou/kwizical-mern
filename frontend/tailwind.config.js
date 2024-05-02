@@ -27,6 +27,7 @@ export default {
         yellow: "#FBF44A",
         turquoise: "#7CD8E0",
         "hot-pink": "#F94E80",
+        navy: "#0E243C",
       },
       backgroundImage: {
         'metal': 'url("../src/assets/backgrounds/metal1.png")',

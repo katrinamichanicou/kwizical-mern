@@ -97,9 +97,9 @@ const handleGoBack = () => {
 };
 
 return (
-    <div className="min-h-screen relative overflow-hidden bg-homepage-background-1 bg-full">
+    <div className="min-h-screen relative overflow-hidden bg-homepage-background-1 bg-full roboto text-black">
     <div className="absolute inset-0 flex justify-center items-center">
-      <div className="flex flex-col w-3/4 h-3/4 rounded-lg bg-dark-purple bg-opacity-50 border-navy-border border-8 overflow-x-auto p-2">
+      <div className="flex flex-col w-3/4 h-3/4 rounded-lg bg-dark-purple bg-opacity-50 border-navy-border border-4 sm:border-8 overflow-x-auto p-2">
         <div className="overflow-x-auto flex flex-col sm:flex-row items-center sm:items-start w-full sm:h-3/4">
           <div className="flex flex-col items-center h-max-1/3 sm:w-1/2">
             <div className="flex">
@@ -109,11 +109,11 @@ return (
                 className="sm:max-h-60 max-h-16 m-4 sm:m-8"
               />
             </div>
-            <div className="sm:p-8 sm:space-y-4 space-y-1">
-            <h1>Round Score: {score}</h1>
-            <h1>Perfect Round Bonus: {perfectRoundBonus}</h1>
-            <h1>Speed Bonus: {bonus}</h1>
-            <h1 className="font-black">Your Score: {totalScore}</h1>
+            <div className="font-medium sm:text-xl sm:p-8 sm:space-y-4 space-y-1">
+            <h1>ROUND SCORE: {score}</h1>
+            <h1>PERFECT ROUND BONUS: {perfectRoundBonus}</h1>
+            <h1>SPEED BONUS: {bonus}</h1>
+            <h1 className="font-navy text-lg sm:text-2xl font-extrabold underline p-1 border-hot-pink rounded-full">YOUR SCORE: {totalScore}</h1>
             </div>
             
           </div>
@@ -168,11 +168,11 @@ return (
           </div>
         </div>
         <div className="w-full flex flex-col items-center mt-auto sm:border-t border-navy-border p-4">
-  <p className="mb-4 text-2xl font-bold sm:font-extrabold">{rating}</p>
+  <p className="mb-4 text-3xl sm:text-5xl font-bold question-font sm:font-extrabold">{rating}</p>
   <div className="flex items-center">
     <button onClick={handleGoBack} className={`items-center justify-center bg-hot-pink text-navy font-semibold  w-60 h-10 
       rounded-lg shadow-md shadow-indigo-950 hover:shadow-none flex transition duration-300 
-      ease-in-out transform`}>Play Again!</button>
+      ease-in-out transform`}>PLAY AGAIN!</button>
   </div>
 </div>
       </div>
