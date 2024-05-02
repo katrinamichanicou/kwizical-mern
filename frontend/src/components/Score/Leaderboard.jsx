@@ -26,7 +26,7 @@ export const Leaderboard = ({ reloadLeaderboard }) => {
                 />
             </div>
             <div className="overflow-x-auto">
-                <table className="table-auto border-collapse border-navy-border bg-dark-purple bg-opacity-50 text-xl">
+                <table className="table-auto border-collapse border-navy-border bg-dark-purple bg-opacity-50 text-l sm:text-xl roboto">
                     <thead>
                         <tr>
                             <th className="border border-navy-border px-2 py-2">Ranking</th>

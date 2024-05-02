@@ -95,7 +95,7 @@ describe("Question component", () => {
         render(<QuizPage />);
         fireEvent.click(screen.getByText("Pop"));
         fireEvent.click(screen.getByText("Casual Mode"));
-        await waitFor(() => expect(screen.queryByText("What is the name of the artist?")).toBeInTheDocument());
+        await waitFor(() => expect(screen.queryByText("Name the artist")).toBeInTheDocument());
     });
 
   test("After selecting an answer, another question is generated on the page", async () => {

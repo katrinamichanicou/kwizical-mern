@@ -107,7 +107,7 @@ export const QuizPage = () => {
           <div
               className={
                 `absolute inset-0 flex flex-col items-center justify-center 
-            animate__animated animate__slideInRight ${selectedBackground} bg-full`
+            animate__animated animate__slideInRight ${selectedBackground} bg-cover`
                 // The above Tailwind code applies the sliding animation to the transition from the genre 'page' to the quiz 'page'
               }
             >

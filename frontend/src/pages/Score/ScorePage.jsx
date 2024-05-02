@@ -101,10 +101,10 @@ export const ScorePage = () => {
     return (
         <div className="min-h-screen relative overflow-hidden bg-homepage-background-1 bg-full roboto text-black">
             <Navigation />
-            <div className="absolute inset-0 flex justify-center items-center">
+            <div className="inset-0 flex justify-center items-center">
                 <div className="flex flex-col w-3/4 h-3/4 rounded-lg bg-dark-purple bg-opacity-50 border-navy-border border-4 sm:border-8 overflow-x-auto p-2">
-                    <div className="overflow-x-auto flex flex-col sm:flex-row items-center sm:items-start w-full sm:h-3/4">
-                        <div className="flex flex-col items-center h-max-1/3 sm:w-1/2">
+                    <div className="overflow-x-auto flex flex-col sm:flex-row items-center sm:items-start w-full sm:h-3/4 md:mb-7">
+                        <div className="flex flex-col items-center h-max-1/3 sm:w-1/2 sm:border-r border-navy-border h-full">
                             <div className="flex">
                                 <img
                                     src={totalscore}
@@ -120,7 +120,7 @@ export const ScorePage = () => {
                             </div>
                             <ScorePosting score={totalScore} reloadLeaderboard={reloadLeaderboard} setReloadLeaderboard={setReloadLeaderboard} />
                         </div>
-                        <div className="sm:border-r border-navy-border h-full"></div>
+        
                         <div className="flex flex-col items-center sm:w-1/2 p-2">
                             <Leaderboard reloadLeaderboard={reloadLeaderboard} />
                         </div>

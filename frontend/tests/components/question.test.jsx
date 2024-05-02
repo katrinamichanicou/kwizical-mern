@@ -5,21 +5,21 @@ import "@testing-library/jest-dom";
 describe("Question component", () => {
   test("Question is generated for track title", () => {
     render(<Question questionType={0} />);
-    expect(screen.queryByText("What is the name of the track?")).toBeInTheDocument();
+    expect(screen.queryByText("Name the track")).toBeInTheDocument();
   });
 
   test("Question is generated for artist name", () => {
     render(<Question questionType={1} />);
-    expect(screen.queryByText("What is the name of the artist?")).toBeInTheDocument();
+    expect(screen.queryByText("Name the artist")).toBeInTheDocument();
   });
 
   test("Question is generated for album title", () => {
     render(<Question questionType={2} />);
-    expect(screen.queryByText("What is the name of the album this track is on?")).toBeInTheDocument();
+    expect(screen.queryByText("Name the album")).toBeInTheDocument();
   });
 
   test("Question is generated for release date", () => {
     render(<Question questionType={3} />);
-    expect(screen.queryByText("In what year was this song released?")).toBeInTheDocument();
+    expect(screen.queryByText("Guess the year")).toBeInTheDocument();
   });
 });
