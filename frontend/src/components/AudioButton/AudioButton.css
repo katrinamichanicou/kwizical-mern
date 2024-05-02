@@ -7,6 +7,20 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .audio .play-button {
+    width: 200px; /* Adjust width for smaller screens */
+    height: 200px; /* Adjust height for smaller screens */
+  }
+  
+}
+@media (max-width: 400px) {
+  .audio .play-button {
+    width: 150px; /* Adjust width for smaller screens */
+    height: 150px; /* Adjust height for smaller screens */
+  }
+}
+
 .audio .play-button.pulsate {
   animation: shadowPulse 1s infinite linear;
 }

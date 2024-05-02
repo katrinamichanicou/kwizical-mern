@@ -57,7 +57,7 @@ const Answer = ({
 
   return (
     <>
-      <div className={`grid grid-cols-1 gap-y-2 md:grid-cols-2 gap-x-40`}>
+      <div className={`flex justify-center justify-items-center grid grid-cols-1 sm:gap-y-8 gap-y-4 md:grid-cols-2 gap-x-24`}>
         {" "}
         {/* 'grid grid-cols-2' this turns the row of answers into two columns. Adding md: applies the changes only when the screen is wider than the md breakpoint*/}
         {shuffledArtistAnswerList.map((answer, id) => (
@@ -66,8 +66,8 @@ const Answer = ({
             onClick={() => answerClick(answer, id)}
             disabled={interactionDisabled}
             className={`btn overflow-hidden relative
-                w-80 h-28 text-text-color text-2xl rounded-xl font-bold uppercase rounded-lg shadow-md hover:text-hover-text-color
-                before:block before:absolute before:h-full before:w-full
+                md:w-80 w-72 md:h-24 h-20 text-text-color p-2 rounded-xl font-bold uppercase rounded-lg shadow-md hover:text-hover-text-color
+                before:block before:absolute before:h-full before:w-full text-base md:text-xl
                 before:left-0 before:top-0 before:-translate-y-full before:transition-transform ${buttonColors[id]
               }  
                 ${buttonColors[id] === "bg-box-color"
@@ -78,9 +78,10 @@ const Answer = ({
           >
             {answer}
           </button>
+          
         ))}
       </div>
-      <div className="mt-8 font-bold text-3xl">
+      <div className="mt-8 font-bold question-font text-2xl sm:text-4xl">
         <p className="text-question-text-color">Your Score: {score}</p>
         <p className="text-question-text-color">Speed Bonus: {bonus}</p>
       </div>

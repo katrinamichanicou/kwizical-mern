@@ -41,6 +41,7 @@ export const QuizPage = () => {
           setShuffledArtistAnswerList(shuffledArtistAnswerList);
           setSelectedTrack(selectedTrack);
           setQuestionType(questionType);
+          setTime(0)
           setInteractionDisabled(false);
           setAnimate(true);
         }
@@ -87,7 +88,7 @@ const handlePlayPause = useCallback((newState) => {
     <>
       <div
         className={
-          "min-h-screen relative overflow-hidden bg-homepage-background-2 bg-full"
+          "min-h-screen overflow-x-auto bg-homepage-background-2 bg-full"
         }
       >
         <Navigation />
@@ -106,7 +107,7 @@ const handlePlayPause = useCallback((newState) => {
           <div
               className={
                 `absolute inset-0 flex flex-col items-center justify-center 
-            animate__animated animate__slideInRight ${selectedBackground} bg-full`
+            animate__animated animate__slideInRight ${selectedBackground} bg-cover`
                 // The above Tailwind code applies the sliding animation to the transition from the genre 'page' to the quiz 'page'
               }
             >
@@ -114,10 +115,10 @@ const handlePlayPause = useCallback((newState) => {
               <div
                 className={`${
                   animate ? "animate__animated animate__slideInRight" : ""
-                } bg-white bg-opacity-30 rounded-lg p-2`}
+                } bg-white bg-opacity-30 rounded-lg p-2 min-h-screen overflow-x-auto`}
               >
                 <div
-                  className="text-4xl 2B2939 font-bold "
+                  className=" text-3xl md:text-5xl 2B2939 question-font font-bold "
                   hidden={interactionDisabled}
                 >
                   Question {questionNumber} of 5
@@ -129,7 +130,7 @@ const handlePlayPause = useCallback((newState) => {
                     playButtonState={playButtonState}
                   />
                 </div>
-                <div className={`p-5 text-7xl question-font`}>
+                <div className={`p-5 text-5xl md:text-7xl question-font`}>
                   <Question questionType={questionType} />
                 </div>
                 <div className={`p-5`}>

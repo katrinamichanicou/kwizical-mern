@@ -4,13 +4,13 @@ const Question = ({ questionType, hidden }) => {
   const whichQuestion = (questionType) => {
     console.log(questionType)
     if (questionType === 0) {
-      return "What is the name of the track?"
+      return "Name the track"
     } else if (questionType === 1) {
-      return "What is the name of the artist?"
+      return "Name the artist"
     } else if (questionType === 2) {
-      return "What is the name of the album this track is on?"
+      return "Name the album"
     } else if (questionType === 3) {
-    return "In what year was this song released?"
+    return "Guess the year"
   }
  
   }
