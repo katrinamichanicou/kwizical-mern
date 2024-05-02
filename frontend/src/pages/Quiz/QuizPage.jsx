@@ -34,6 +34,7 @@ export const QuizPage = () => {
 
   useEffect(() => {
     setAnimate(false);
+    localStorage.setItem("scorePosted", "false");
 
     if (questionNumber <= 5) {
       answers(selectedGenre, selectedDifficulty).then(
@@ -53,7 +54,7 @@ export const QuizPage = () => {
   }, [selectedGenre, selectedDifficulty, questionNumber, navigate]);
 
 
-const handlePlayPause = useCallback((newState) => {
+  const handlePlayPause = useCallback((newState) => {
     setPlayButtonState(newState);
     //When play is pressed, sets to isplaying. When pressed again, sets to !isplaying
   }, []);
@@ -63,7 +64,6 @@ const handlePlayPause = useCallback((newState) => {
     if (playButtonState) {
       interval = setInterval(() => {
         setTime((prevTimer) => {
-          console.log("Timer updated:", prevTimer + 1); // Log the updated timer value
           return prevTimer + 1;
         });
       }, 1000);
@@ -81,7 +81,7 @@ const handlePlayPause = useCallback((newState) => {
   const handleDifficultyPicker = (difficultyID) => {
     setSelectedDifficulty(difficultyID);
   };
- 
+
 
   return (
     <>
@@ -92,59 +92,58 @@ const handlePlayPause = useCallback((newState) => {
       >
         <Navigation />
         {selectedGenre === 0 ? (
-          <div className="animate__animated animate__slideInRight absolute inset-0 flex justify-center items-center">
+          <div className="animate__animated animate__slideInRight inset-0 flex justify-center items-center">
             <GenrePicker onGenreSelect={handleGenrePicker}></GenrePicker>
           </div>
-        ) : 
-        selectedDifficulty === 0 ? (
-          <div className="animate__animated animate__slideInRight absolute inset-0 flex justify-center items-center">
-            <Difficulty onDifficultySelect={handleDifficultyPicker}></Difficulty>
-          </div>
         ) :
-        (
-          <>
-          <div
-              className={
-                `absolute inset-0 flex flex-col items-center justify-center 
-            animate__animated animate__slideInRight ${selectedBackground} bg-full`
-                // The above Tailwind code applies the sliding animation to the transition from the genre 'page' to the quiz 'page'
-              }
-            >
-
-              <div
-                className={`${
-                  animate ? "animate__animated animate__slideInRight" : ""
-                } bg-white bg-opacity-30 rounded-lg p-2`}
-              >
+          selectedDifficulty === 0 ? (
+            <div className="animate__animated animate__slideInRight inset-0 flex justify-center items-center">
+              <Difficulty onDifficultySelect={handleDifficultyPicker}></Difficulty>
+            </div>
+          ) :
+            (
+              <>
                 <div
-                  className="text-4xl 2B2939 font-bold "
-                  hidden={interactionDisabled}
+                  className={
+                    `absolute inset-0 flex flex-col items-center justify-center 
+            animate__animated animate__slideInRight ${selectedBackground} bg-full`
+                    // The above Tailwind code applies the sliding animation to the transition from the genre 'page' to the quiz 'page'
+                  }
                 >
-                  Question {questionNumber} of 5
+
+                  <div
+                    className={`${animate ? "animate__animated animate__slideInRight" : ""
+                      } bg-white bg-opacity-30 rounded-lg p-2`}
+                  >
+                    <div
+                      className="text-4xl 2B2939 font-bold "
+                      style={{ visibility: interactionDisabled ? 'hidden' : 'visible' }}
+                    >
+                      Question {questionNumber} of 5
+                    </div>
+                    <div className="p-5">
+                      <AudioButton
+                        trackPreview={selectedTrack.preview}
+                        onPlayPause={handlePlayPause}
+                        playButtonState={playButtonState}
+                      />
+                    </div>
+                    <div className={`p-5 text-7xl question-font`}>
+                      <Question questionType={questionType} />
+                    </div>
+                    <div className={`p-5`}>
+                      <Answer
+                        shuffledArtistAnswerList={shuffledArtistAnswerList}
+                        selectedTrack={selectedTrack}
+                        onAnswerButtonClick={handleAnswerButtonClick}
+                        interactionDisabled={interactionDisabled}
+                        time={time}
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="p-5">
-                  <AudioButton
-                    trackPreview={selectedTrack.preview}
-                    onPlayPause={handlePlayPause}
-                    playButtonState={playButtonState}
-                  />
-                </div>
-                <div className={`p-5 text-7xl question-font`}>
-                  <Question questionType={questionType} />
-                </div>
-                <div className={`p-5`}>
-                  <Answer
-                    shuffledArtistAnswerList={shuffledArtistAnswerList}
-                    selectedTrack={selectedTrack}
-                    onAnswerButtonClick={handleAnswerButtonClick}
-                    interactionDisabled={interactionDisabled}
-                    time={time}
-                  />
-                </div>
-              </div>
-              </div>
-          </>
-        )}
+              </>
+            )}
       </div>
     </>
   );
