@@ -24,8 +24,49 @@ const create = async (req, res) => {
   }
 };
 
+const getUsersForLeaderboard = async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json({ users: users });
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({ message: "Something went wrong" });
+  }
+}
+
+const addToUserScore = async (req, res) => {
+  const email = req.body.email;
+  const score = req.body.score;
+
+  const user = await User.findOne({ email: email });
+  if (user) {
+    console.log("old score: " + user.score)
+    //const newScore = user.score + score;
+    user.score += score;
+    //console.log("new score: " + newScore)
+    //if (newScore > user.score) {
+      console.log("updating score")
+      try {
+      User.findOneAndUpdate({ email: email }, user)
+      const newUser = await User.findOne({ email: email })
+      console.log("new score: " + newUser.score);
+      } catch (error) {
+        console.log(error);
+      }
+    //   .then(() => {
+           console.log("score after update: " + user.score);
+    //   })
+    // }
+    res.status(200).json({ message: "Score updated" })
+  } else {
+    res.status(400).json({ message: "User not found" });
+  }
+}
+
 const UsersController = {
   create: create,
+  getUsersForLeaderboard: getUsersForLeaderboard,
+  addToUserScore: addToUserScore,
 };
 
 module.exports = UsersController;

@@ -34,6 +34,7 @@ export const QuizPage = () => {
 
   useEffect(() => {
     setAnimate(false);
+    localStorage.setItem("scorePosted", "false");
 
     if (questionNumber <= 5) {
       answers(selectedGenre, selectedDifficulty).then(
@@ -54,7 +55,7 @@ export const QuizPage = () => {
   }, [selectedGenre, selectedDifficulty, questionNumber, navigate]);
 
 
-const handlePlayPause = useCallback((newState) => {
+  const handlePlayPause = useCallback((newState) => {
     setPlayButtonState(newState);
     //When play is pressed, sets to isplaying. When pressed again, sets to !isplaying
   }, []);
@@ -64,7 +65,6 @@ const handlePlayPause = useCallback((newState) => {
     if (playButtonState) {
       interval = setInterval(() => {
         setTime((prevTimer) => {
-          console.log("Timer updated:", prevTimer + 1); // Log the updated timer value
           return prevTimer + 1;
         });
       }, 1000);
@@ -82,7 +82,7 @@ const handlePlayPause = useCallback((newState) => {
   const handleDifficultyPicker = (difficultyID) => {
     setSelectedDifficulty(difficultyID);
   };
- 
+
 
   return (
     <>
@@ -93,12 +93,12 @@ const handlePlayPause = useCallback((newState) => {
       >
         <Navigation />
         {selectedGenre === 0 ? (
-          <div className="animate__animated animate__slideInRight absolute inset-0 flex justify-center items-center">
+          <div className="animate__animated animate__slideInRight inset-0 flex justify-center items-center">
             <GenrePicker onGenreSelect={handleGenrePicker}></GenrePicker>
           </div>
         ) : 
         selectedDifficulty === 0 ? (
-          <div className="animate__animated animate__slideInRight absolute inset-0 flex justify-center items-center">
+          <div className="animate__animated animate__slideInRight inset-0 flex justify-center items-center">
             <Difficulty onDifficultySelect={handleDifficultyPicker}></Difficulty>
           </div>
         ) :
@@ -107,7 +107,7 @@ const handlePlayPause = useCallback((newState) => {
           <div
               className={
                 `absolute inset-0 flex flex-col items-center justify-center 
-            animate__animated animate__slideInRight ${selectedBackground} bg-cover`
+            animate__animated animate__slideInRight ${selectedBackground} bg-full`
                 // The above Tailwind code applies the sliding animation to the transition from the genre 'page' to the quiz 'page'
               }
             >
@@ -118,8 +118,8 @@ const handlePlayPause = useCallback((newState) => {
                 } bg-white bg-opacity-30 rounded-lg p-2 min-h-screen overflow-x-auto`}
               >
                 <div
-                  className=" text-3xl md:text-5xl 2B2939 question-font font-bold "
-                  hidden={interactionDisabled}
+                  className="text-3xl md:text-5xl 2B2939 question-font font-bold "
+                  style={{ visibility: interactionDisabled ? 'hidden' : 'visible' }}
                 >
                   Question {questionNumber} of 5
                 </div>
