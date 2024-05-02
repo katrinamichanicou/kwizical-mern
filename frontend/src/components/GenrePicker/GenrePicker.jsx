@@ -13,18 +13,18 @@ const GenrePicker = ({ onGenreSelect }) => {
   return (
     <div className="">
       <div className="mt-4">
-        <h1 className="text-4xl font-bold mb-8 text-center text-title-color">
+        <h1 className=" text-5xl sm:text-7xl  font-bold question-font mb-8 text-center text-title-color">
           Select a genre
         </h1>
       </div>
       <div className="grid grid-cols-2 gap-5 md:grid-cols-3 md:gap-12 p-8">
         {genres.map(genre => (
-          <button key={genre.id} className={`bg-box-color hover:bg-hover-color hover:text-hover-text-color text-text-color font-bold w-36 h-36 sm:w-40 sm:h-40 
+          <button key={genre.id} className={`bg-box-color hover:bg-hover-color hover:text-hover-text-color text-text-color w-36 h-36 sm:w-40 sm:h-40 
             rounded-lg shadow-md flex items-center justify-center transition duration-300 
             ease-in-out transform hover:scale-105`}
             onClick={() => onGenreSelect(genre.id, genre.background)}
           >
-            <span className="text-xl">{genre.name}</span>
+            <span className="question-font text-2xl sm:text-3xl">{genre.name}</span>
           </button>
         ))}
       </div>
