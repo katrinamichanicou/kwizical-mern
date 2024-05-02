@@ -11,19 +11,15 @@ export const Navigation = () => {
         localStorage.clear()
         navigate("/");
     }
-
-    const handleImageClick = () => {
-        navigate("/profile");
-    }
     
     return (
         <>
         <div className="flex justify-between" style={{visibility: userName ? 'visible' : 'hidden' }}>
         <div className="text-lg font-bold p-9">
-            <button className="border rounded-lg p-3 bg-white hover:bg-hover-color hover:text-hover-text-color" onClick={handleLogout} >Logout</button>
+            <button className="border border-hot-pink rounded-lg p-3 bg-light-purple hover:bg-hover-color hover:text-light-purple roboto" onClick={handleLogout} >Logout</button>
         </div>
         <div className="p-7">
-            <img src={userImg} className="rounded-full cursor-pointer" onClick={handleImageClick}/>
+            <img src={userImg} className="rounded-full cursor-pointer"/>
         </div>
         </div>
         </>

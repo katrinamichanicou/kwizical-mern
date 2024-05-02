@@ -34,10 +34,10 @@ describe("Score page", () => {
 
         render(<ScorePage />);
 
-        expect(screen.getByText('Round Score: 300')).toBeInTheDocument();
-        expect(screen.getByText('Perfect Round Bonus: 0')).toBeInTheDocument();
-        expect(screen.getByText('Speed Bonus: 50')).toBeInTheDocument();
-        expect(screen.getByText('Your Score: 350')).toBeInTheDocument();
+        expect(screen.getByText('ROUND SCORE: 300')).toBeInTheDocument();
+        expect(screen.getByText('PERFECT ROUND BONUS: 0')).toBeInTheDocument();
+        expect(screen.getByText('SPEED BONUS: 50')).toBeInTheDocument();
+        expect(screen.getByText('YOUR SCORE: 350')).toBeInTheDocument();
     })
 
     test('retrieves data from local storage and displays a rating', () => {
@@ -47,10 +47,10 @@ describe("Score page", () => {
 
         render(<ScorePage />);
 
-        expect(screen.getByText('Round Score: 0')).toBeInTheDocument();
-        expect(screen.getByText('Perfect Round Bonus: 0')).toBeInTheDocument();
-        expect(screen.getByText('Speed Bonus: 0')).toBeInTheDocument();
-        expect(screen.getByText('Your Score: 0')).toBeInTheDocument();
+        expect(screen.getByText('ROUND SCORE: 0')).toBeInTheDocument();
+        expect(screen.getByText('PERFECT ROUND BONUS: 0')).toBeInTheDocument();
+        expect(screen.getByText('SPEED BONUS: 0')).toBeInTheDocument();
+        expect(screen.getByText('YOUR SCORE: 0')).toBeInTheDocument();
         expect(screen.getByText('Do you even moonwalk?')).toBeInTheDocument();
     })
 
@@ -58,10 +58,10 @@ describe("Score page", () => {
         localStorage.clear();
         render(<ScorePage />);
 
-        expect(screen.getByText("Round Score:")).toBeInTheDocument();
-        expect(screen.getByText(/Perfect Round Bonus: 0/)).toBeInTheDocument();
-        expect(screen.getByText("Speed Bonus:")).toBeInTheDocument();
-        expect(screen.getByText(/Your Score: 0/)).toBeInTheDocument();
+        expect(screen.getByText("ROUND SCORE:")).toBeInTheDocument();
+        expect(screen.getByText(/PERFECT ROUND BONUS: 0/)).toBeInTheDocument();
+        expect(screen.getByText("SPEED BONUS:")).toBeInTheDocument();
+        expect(screen.getByText(/YOUR SCORE: 0/)).toBeInTheDocument();
         expect(screen.getByText(/Default rating message/)).toBeInTheDocument();
     });
 });

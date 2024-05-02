@@ -13,7 +13,7 @@ export const HomePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-full bg-cover bg-homepage-background-2 font-montserrat overflow-hidden">
+    <div className="min-h-screen bg-full bg-cover bg-homepage-background-2 roboto overflow-hidden">
       <div className="flex flex-col md:flex-row md:items-start">
         <div className="w-full md:w-1/2 lg:pr-8">
           <div className="md:p-8 md:pl-16 rounded-lg sm:text-left px-4">
@@ -24,7 +24,7 @@ export const HomePage = () => {
                 className="w-60 h-60 mt-4"
               />
             </div>
-            <div className="sm:text-8xl font-semibold text-white py-8 text-4xl">{"LET'S GET KWIZICAL!"}</div>
+            <div className="sm:text-9xl font-semibold text-white py-8 question-font text-6xl">{"LET'S GET KWIZICAL!"}</div>
             <div className="text-xl text-white mb-8">
               A fun and challenging quiz game to test your music knowledge!
             </div>
