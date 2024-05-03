@@ -10,7 +10,6 @@ We recommend you look through these docs together.
 | Title                                                | Summary                        |
 | ---------------------------------------------------- | ------------------------------ |
 | [Full-Stack Overview](./docs/full-stack_overview.md) | Frontend/Backend communication |
-| [Authentication](./docs/authentication.md)           | JSON Web Tokens                |
 
 
 ## Reference Docs:

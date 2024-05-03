@@ -1,8 +1,8 @@
-## Acebook MERN Template
+## Kwizical!
 
-In this project, you are task with working on an existing application. A
-significant part of the challenge will be to familiarise yourself with the
-codebase you've inherited, as you work to **improve and extend** it.
+Kwizical is a web based music quiz game, built in the MERN(Mongo, Express, React, Node) stack.
+The goal is to listen to the given music snippet and answer 5 questions about it, per round.
+The player can choose their preferred genre and their difficulty setting (which alters the questions asked).
 
 ### Structure
 
@@ -16,14 +16,7 @@ run separately.
 
 ### Documentation
 
-[More documentation of the codebase and its architecture can be found here.](./DOCUMENTATION.md)
-It's recommended you all read the suggested docs _after making sure the whole
-setup below worked for everyone_. Then work together on a diagram describing how
-the application works.
-
-### Card wall
-
-REPLACE THIS TEXT WITH A LINK TO YOUR CARD WALL
+IN CONSTRUCTION
 
 ### Quickstart
 
@@ -43,11 +36,11 @@ If you haven't already, make sure you have node and NVM installed.
    nvm install 20
    ```
 
-### Set up your project
+### Set up our project
 
-1. Have one team member fork this repository
-2. Rename the fork to `acebook-<team name>`
-3. Every team member clone the fork to their local machine
+1. Fork this repository.
+2. Rename the fork to your preferred name.
+3. Clone the fork to your local machine
 4. Install dependencies for both the `frontend` and `api` applications:
    ```
    cd frontend
@@ -55,32 +48,19 @@ If you haven't already, make sure you have node and NVM installed.
    cd ../api
    npm install
    ```
-5. Install an ESLint plugin for your editor, for example
-   [ESLint for VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-6. Install MongoDB
-   ```
-   brew tap mongodb/brew
-   brew install mongodb-community@6.0
-   ```
-   _Note:_ If you see a message that says
-   `If you need to have mongodb-community@6.0 first in your PATH, run:`, follow
-   the instruction. Restart your terminal after this.
-7. Start MongoDB
-
-   ```
-   brew services start mongodb-community@6.0
-   ```
+6. We have no local database option. Our MongoDB is hosted online on MongoDB Atlas.
+You would need your own copy.
 
 ### Setting up environment variables.
 
-We need to create two `.env` files, one in the frontend and one in the api.
+You need to create two `.env` files, one in the frontend and one in the api.
 
 #### Frontend
 
 Create a file `frontend/.env` with the following contents:
 
 ```
-VITE_BACKEND_URL="http://localhost:3000"
+VITE_BACKEND_URL="<backend_url_here>"
 ```
 
 #### Backend
@@ -88,12 +68,10 @@ VITE_BACKEND_URL="http://localhost:3000"
 Create a file `api/.env` with the following contents:
 
 ```
-MONGODB_URL="mongodb://0.0.0.0/acebook"
 NODE_ENV="development"
-JWT_SECRET="secret"
+DB_USER="<your_db_username_here>"
+DB_PASSWORD="<your_db_password_here>"
 ```
-
-For an explanation of these environment variables, see the documentation.
 
 ### How to run the server and use the app
 
@@ -114,10 +92,5 @@ In a new terminal session...
 ```
 
 You should now be able to open your browser and go to
-`http://localhost:5174/signup` to create a new user.
-
-Then, after signing up, you should be able to log in by going to
-`http://localhost:5174/login`.
-
-After logging in, you won't see much but you can create posts using PostMan and
-they should then show up in the browser if you refresh the page.
+`http://localhost:5173/` to reach the homepage and play our game
+as a guest. Google sign-in will not work for you.
