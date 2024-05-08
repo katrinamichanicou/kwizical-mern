@@ -4,12 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { HomePage } from "../../src/pages/Home/HomePage";
 
+const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
 describe("Home Page", () => {
   test("Tagline is displayed", () => {
     // We need the Browser Router so that the Link elements load correctly
     render(
       <BrowserRouter>
-      <GoogleOAuthProvider clientId="108211060185-rc1g9je54b5hsufug7fho331oerfrpk2.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={googleClientId}>
         <HomePage />
       </GoogleOAuthProvider>
       </BrowserRouter>
@@ -22,7 +24,7 @@ describe("Home Page", () => {
   test("Displays 'play as guest' link", async () => {
     render(
       <BrowserRouter>
-      <GoogleOAuthProvider clientId="108211060185-rc1g9je54b5hsufug7fho331oerfrpk2.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={googleClientId}>
         <HomePage />
       </GoogleOAuthProvider>
       </BrowserRouter>
@@ -35,7 +37,7 @@ describe("Home Page", () => {
   test("Displays a Google link", async () => {
     render(
       <BrowserRouter>
-      <GoogleOAuthProvider clientId="108211060185-rc1g9je54b5hsufug7fho331oerfrpk2.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={googleClientId}>
         <HomePage />
       </GoogleOAuthProvider>
       </BrowserRouter>

@@ -9,9 +9,10 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 // Get the "root" div from index.html.
 // The React application will be inserted into this div.
 const rootElement = document.getElementById("root");
+const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 ReactDOM.createRoot(rootElement).render(
-  <GoogleOAuthProvider clientId="108211060185-rc1g9je54b5hsufug7fho331oerfrpk2.apps.googleusercontent.com">
+  <GoogleOAuthProvider clientId={googleClientId}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
