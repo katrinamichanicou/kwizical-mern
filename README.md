@@ -94,3 +94,10 @@ In a new terminal session...
 You should now be able to open your browser and go to
 `http://localhost:5173/` to reach the homepage and play our game
 as a guest. Google sign-in will not work for you.
+
+### Screenshots
+![Home Page](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen1-HomePage.png)
+![Genre Picker](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen2-HomePage-GenrePicker.png)
+![Select Difficulty](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen3-HomePage-Difficulty.png)
+![Quiz Page (Pop Genre)](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen4-QuizPage.png)
+![Score Page](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen5-ScorePage.png)
