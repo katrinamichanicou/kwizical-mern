@@ -96,8 +96,18 @@ You should now be able to open your browser and go to
 as a guest. Google sign-in will not work for you.
 
 ### Screenshots
+
+Home Page
 ![Home Page](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen1-HomePage.png)
+
+Genre Picker
 ![Genre Picker](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen2-HomePage-GenrePicker.png)
+
+Difficulty
 ![Select Difficulty](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen3-HomePage-Difficulty.png)
+
+Quiz Page
 ![Quiz Page (Pop Genre)](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen4-QuizPage.png)
+
+Score Page
 ![Score Page](https://github.com/katrinamichanicou/kwizical-mern/blob/main/Screen5-ScorePage.png)
