@@ -47,7 +47,7 @@ const addToUserScore = async (req, res) => {
     //if (newScore > user.score) {
       console.log("updating score")
       try {
-      await User.findOneAndUpdate({ email: email }, { score: user.score })
+      User.findOneAndUpdate({ email: email }, user)
       const newUser = await User.findOne({ email: email })
       console.log("new score: " + newUser.score);
       } catch (error) {
